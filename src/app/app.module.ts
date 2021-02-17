@@ -18,6 +18,7 @@ import { FollowUsComponent } from './Components/main-component/rightside-compone
 import { LatestNewsComponent } from './Components/main-component/leftside-components/latest-news/latest-news.component';
 import { EditorsPicksComponent } from './Components/main-component/leftside-components/editors-picks/editors-picks.component';
 import { TrendingComponentComponent } from './Components/main-component/trending-component/trending-component.component';
+import { DetailsPageComponent } from './Components/details-page/details-page.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { TrendingComponentComponent } from './Components/main-component/trending
     LatestNewsComponent,
     EditorsPicksComponent,
     TrendingComponentComponent,
+    DetailsPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   <div class="col-md-7">
     <ng-container *ngFor="let News of lastNews.articles ; let i = index">
       <div class="card" *ngIf="i == firstNews">
-        <a>
+        <a [routerLink]="['Details' , News.source.id]">
           <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{News.title}}</h5>
