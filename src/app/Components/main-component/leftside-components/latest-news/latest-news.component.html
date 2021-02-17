@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-7">
+    <ng-container *ngFor="let News of lastNews.articles ; let i = index">
+      <div class="card" *ngIf="i == firstNews">
+        <a>
+          <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{News.title}}</h5>
+            <p class="card-text">{{News.description}}</p>
+            <p>By : <span class="text-danger">{{News.author}}</span></p>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-md-5">
+    <ng-container *ngFor="let News of lastNews.articles ; let i = index">
+      <div class="card" *ngIf="i >= Startcounter  && i <= Endcounter">
+        <a>
+          <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
+          <div class="card-body">
+            <small>{{News.author}}</small>
+            <p class="card-text">{{News.description}}</p>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>

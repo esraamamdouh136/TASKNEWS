@@ -1,0 +1,15 @@
+<div class="EditorsPicks">
+    <h4> Editors Picks</h4>
+    <ng-container *ngFor="let News of EditorsPicks.articles ; let i = index">
+    <div class="row border-bottom" *ngIf="i >= Startcounter  && i <= Endcounter">
+        <div class="col-md-4">
+            <img class="img-fluid" src="{{News.urlToImage}}">
+        </div>
+        <div class="col-md-8">
+            <small>MUSTREAD</small>
+            <h4>{{News.title}}</h4>
+            <p>{{News.description}}</p>
+        </div>
+    </div>
+    </ng-container>
+</div>

@@ -1,0 +1,9 @@
+<div class="MostPopular border p-3 my-3">
+    <h4 class="text-danger"> Most Popular </h4>
+    <ng-container *ngFor="let News of MostPopular.articles ; let i = index">
+    <div class="d-flex border-bottom"  *ngIf="i >= Startcounter  && i <= Endcounter">
+        <span>{{i}}</span>
+        <p>{{News.description}}</p>
+    </div>
+    </ng-container>
+</div>
