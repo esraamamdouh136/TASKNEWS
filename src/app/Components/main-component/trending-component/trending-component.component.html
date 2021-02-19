@@ -1,33 +1,43 @@
 <div class="row">
-    <ng-container *ngFor="let News of Trending.articles ; let i = index">
-    <div class="col-md-3" *ngIf="i >= Startcounter  && i <= Endcounter">
-        <div class="card">
-          <a>
-            <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
-            <div class="card-body">
-                <small>{{News.publishedAt | date}}</small>
-              <h5 class="card-title">{{News.title}}</h5>
-              <p>By : <span class="text-danger">{{News.author}}</span></p>
-            </div>
-          </a>
-        </div>
-     
-    </div>
-</ng-container>
- 
+  <div class="col-lg-12">
+    <div class="title">
+      <div class="line"></div>
+      <h4>Trending</h4>
 
-<ng-container *ngFor="let News of Trending.articles ; let i = index">
-    <div class="col-md-3">
-        <div class="card">
-          <a>
-            <div class="card-body">
-                <small>{{News.publishedAt | date}}</small>
-              <h5 class="card-title">{{News.title}}</h5>
-              <p>By : <span class="text-danger">{{News.author}}</span></p>
-            </div>
-          </a>
-        </div>
-     
     </div>
-</ng-container>
   </div>
+</div>
+
+<div class="row">
+  <ng-container *ngFor="let News of Trending.articles ; let i = index">
+    <div class="col-md-3" *ngIf="i >= Startcounter  && i <= Endcounter">
+      <div class="card">
+        <a>
+          <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
+          <div class="card-body">
+            <small>{{News.publishedAt | date}}</small>
+            <h5 class="card-title">{{News.title}}</h5>
+            <p>By : <span class="text-color">{{News.author}}</span></p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngFor="let News of Trending.articles ; let i = index">
+    <div class="col-md-3">
+      <div class="card">
+        <a>
+          <div class="card-body">
+            <small>{{News.publishedAt | date}}</small>
+            <h5 class="des">{{News.description}}</h5>
+            <p>By : <span class="text-color">{{News.author}}</span></p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </ng-container>
+</div>

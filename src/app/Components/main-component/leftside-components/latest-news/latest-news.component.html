@@ -2,27 +2,56 @@
   <div class="col-md-7">
     <ng-container *ngFor="let News of lastNews.articles ; let i = index">
       <div class="card" *ngIf="i == firstNews">
-        <a [routerLink]="['Details' , News.source.id]">
+        <a [routerLink]="['../Details' , i ]" (click)="getDataDetails(
+           i ,
+           News.title, 
+           News.description, 
+           News.urlToImage ,
+           News.author ,
+           News.publishedAt
+        )">
           <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">{{News.title}}</h5>
-            <p class="card-text">{{News.description}}</p>
-            <p>By : <span class="text-danger">{{News.author}}</span></p>
+            <h5 class="card-title">{{ (News.title.length > 100) ? (News.title | slice:0:100) + '....' : News.title }}
+            </h5>
+            <p class="card-text">
+              {{ (News.description.length > 300) ? (News.description | slice:0:300) + '....' : News.description }}</p>
+            <p>By : <span class="text-color">{{News.author}}</span></p>
           </div>
         </a>
+        <div class="border ml-3 d-flex w-25 p-2">
+          <small class="pr-4"><i class="fas fa-share"></i>12</small>
+          <small><i class="far fa-comment"></i>15</small>
+
+
+        </div>
       </div>
     </ng-container>
   </div>
   <div class="col-md-5">
     <ng-container *ngFor="let News of lastNews.articles ; let i = index">
       <div class="card" *ngIf="i >= Startcounter  && i <= Endcounter">
-        <a>
+        <a [routerLink]="['../Details' , i ]" (click)="getDataDetails(
+          i ,
+          News.title, 
+          News.description, 
+          News.urlToImage ,
+          News.author ,
+          News.publishedAt
+       )">
           <img class="card-img-top" src="{{News.urlToImage}}" alt="Card image cap">
           <div class="card-body">
-            <small>{{News.author}}</small>
-            <p class="card-text">{{News.description}}</p>
+            <small>{{(News.author.length > 30) ? (News.author | slice:0:30) + '....' : News.author}}</small>
+            <p class="card-text">
+              {{ (News.description.length > 200) ? (News.description | slice:0:200) + '....' : News.description }}</p>
           </div>
         </a>
+        <div class="border ml-3 d-flex w-25 p-2">
+          <small class="pr-2"><i class="fas fa-share"></i>12</small>
+          <small><i class="far fa-comment"></i>15</small>
+
+
+        </div>
       </div>
     </ng-container>
   </div>

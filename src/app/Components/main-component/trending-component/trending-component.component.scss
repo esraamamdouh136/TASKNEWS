@@ -1,0 +1,34 @@
+.title {
+  h4 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #d6d5d5;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card {
+    border: none !important;
+    border-bottom: 1px solid #e0dede !important;
+    border-radius: 0px !important;
+  h5.card-title {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .des {
+    font-size: 13px;
+  }
+}

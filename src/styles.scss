@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto', sans-serif !important;
+  margin: 0px;
+  padding: 0px;
+
+  .text-color {
+    color: #B3222F;
+    font-weight: 600;
+  }
+
+  .border {
+    border-radius: 5px !important;
+  }
+
+  .line {
+    width: 90%;
+    height: 1px;
+    background-color: #d6d5d5;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn-color {
+    background-color: #B3222F;
+    color: white;
+
+  }
+
+  .card-header.social {
+    background-color: white !important;
+    text-align: center;
+
+    h3 {
+      font-size: 3em;
+      padding-top: 15px;
+      font-weight: 700;
+    }
+
+  }
+
+  li.list-group-item {
+    color: gray !important;
+    font-size: 13px;
+  }
+
+  a {
+    color: black !important;
+  }
+
+  .RecentPosts {
+    .row:last-child {
+      .line {
+        display: none;
+      }
+    }
+  }
+
+  .MostPopular {
+    .border-bottom:last-child {
+      border-bottom: none !important;
+    }
+  }
+
+ 
+}

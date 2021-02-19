@@ -19,6 +19,12 @@ import { LatestNewsComponent } from './Components/main-component/leftside-compon
 import { EditorsPicksComponent } from './Components/main-component/leftside-components/editors-picks/editors-picks.component';
 import { TrendingComponentComponent } from './Components/main-component/trending-component/trending-component.component';
 import { DetailsPageComponent } from './Components/details-page/details-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScrollTopComponent } from './Components/Shared/scroll-top/scroll-top.component';
+
+
 
 
 @NgModule({
@@ -38,12 +44,17 @@ import { DetailsPageComponent } from './Components/details-page/details-page.com
     EditorsPicksComponent,
     TrendingComponentComponent,
     DetailsPageComponent,
+    ScrollTopComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(), 
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],

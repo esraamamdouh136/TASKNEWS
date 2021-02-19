@@ -1,0 +1,27 @@
+.card {
+  margin-bottom: 15px;
+  border: none;
+
+  a {
+    color: black;
+
+    p {
+      font-size: 13px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      line-height: 1.3;
+      font-size: 35px;
+    }
+
+    small {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+
+}
+
+

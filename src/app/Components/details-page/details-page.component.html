@@ -1,1 +1,85 @@
-<p>details-page works!</p>
+<div class="container details" *ngFor="let news of Datadetails">
+  <div class="row border-bottom mt-2 mb-5">
+    <div class="col-md-12">
+      <div class="title">
+        <h2> {{news.title}}</h2>
+        <p>By : <small class="text-color">{{news.author}}</small> published on
+          <small>{{news.publishedAt | date}}</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="card">
+        <div class="card-header social">
+          <h3>23</h3>
+          <h6>Shares</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <i class="fab fa-google-plus-g"></i> Email
+          </li>
+          <li class="list-group-item"> <i class="fab fa-facebook"></i> Facebook
+          </li>
+          <li class="list-group-item"> <i class="fab fa-twitter"></i>Twitter
+          </li>
+          <li class="list-group-item"> <i class="far fa-share-square"></i>More
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="content">
+        <img src="{{news.urlToImage}}" class="img-fluid">
+        <p class="des w-100">{{news.description}}</p>
+        <div class="d-flex my-5">
+          <button class="btn btn-success"><i class="far fa-thumbs-up"></i>I Found this helpful</button>
+          <button class="btn btn-gray"><i class="far fa-thumbs-down"></i>I did not Find this helpful</button>
+        </div>
+      </div>
+      <div class="comments mb-5">
+        <h3 *ngIf="DataComments.length > 0" class="mb-4">Comments</h3>
+        <div class="border p-3 mb-3" *ngFor="let comment of DataComments">
+          <div class="row">
+            <div class="col-md-1">
+              <img src="../../../assets/Image/1024px-Circle-icons-profile.svg.png" class="w-100">
+
+            </div>
+            <div class="col-md-11">
+                <h5 class="name">{{comment.name}}</h5>
+                <small class="date pr-3">{{Date |  date:' h:mm a , MMM d'}}</small>
+                <small class="reply text-color">Reply</small>
+                <p>{{ (comment.message.length > 200) ? (comment.message | slice:0:200) + '....' : comment.message }}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="converstion mb-5">
+        <h3 class="mb-4">Join the Converstion</h3>
+        <form [formGroup]="Comment" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            <div *ngIf="Comment.controls.name.invalid && Comment.controls.name.touched">
+              Email is invalid
+            </div>
+
+
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            <div *ngIf="Comment.controls.email.invalid && Comment.controls.email.touched">
+                Email is invalid
+              </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Message" rows="3" formControlName="message"></textarea>
+            <div *ngIf="Comment.controls.message.invalid && Comment.controls.message.touched">
+                Email is invalid
+              </div>
+          </div>
+          <button type="submit" class="btn btn-color w-25"  [disabled] = "!Comment.valid">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

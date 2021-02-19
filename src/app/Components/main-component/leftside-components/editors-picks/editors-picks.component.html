@@ -1,15 +1,25 @@
 <div class="EditorsPicks">
     <h4> Editors Picks</h4>
     <ng-container *ngFor="let News of EditorsPicks.articles ; let i = index">
-    <div class="row border-bottom" *ngIf="i >= Startcounter  && i <= Endcounter">
-        <div class="col-md-4">
+        <a [routerLink]="['../Details' , i ]" (click)="getDataDetails(
+           i ,
+           News.title, 
+           News.description, 
+           News.urlToImage ,
+           News.author ,
+           News.publishedAt
+        )">
+    <div class="row mb-3" *ngIf="i >= Startcounter  && i <= Endcounter">
+        <div class="col-md-3">
             <img class="img-fluid" src="{{News.urlToImage}}">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <small>MUSTREAD</small>
-            <h4>{{News.title}}</h4>
-            <p>{{News.description}}</p>
+            <h4>{{ (News.title.length > 50) ? (News.title | slice:0:50) + '....' : News.title }}</h4>
+            <p>{{ (News.description.length > 100) ? (News.description | slice:0:100) + '....' : News.description }}</p>
+            <span class="pb-2">By : <small class="text-color">{{News.author}}</small></span>
         </div>
     </div>
+    </a>
     </ng-container>
 </div>
