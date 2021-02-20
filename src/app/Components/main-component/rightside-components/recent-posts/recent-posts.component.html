@@ -1,16 +1,29 @@
 <div class="RecentPosts border p-3">
-    <h4 class="text-color border-bottom  pm-3"> Recent Posts</h4>
-    <ng-container *ngFor="let News of RecentPosts.articles ; let i = index">
+  <!--Title-->
+  <h4 class="text-color border-bottom  pm-3"> Recent Posts</h4>
+  <!--Start Content-->
+  <ng-container *ngFor="let News of RecentPosts.articles ; let i = index">
     <div class="row " *ngIf="i >= Startcounter  && i <= Endcounter">
-        <div class="col-md-4">
-            <img class="img-fluid" src="{{News.urlToImage}}">
-        </div>
-        <div class="col-md-8">
-            <p>{{ (News.description.length > 50) ? (News.description | slice:0:50) + '....' : News.description }}</p>
-            <span>{{News.publishedAt | date:' h:mm a  on MMM d'}}</span>
-        </div>
-        <div class="line"></div>
+      <div class="col-md-4">
+        <img class="img-fluid" src="{{News.urlToImage}}">
+      </div>
+      <div class="col-md-8">
+        <a [routerLink]="['../Details' , i ]" (click)="getDataDetails(
+                i ,
+                News.title, 
+                News.description, 
+                News.urlToImage ,
+                News.author ,
+                News.publishedAt
+             )">
+          <p>{{ (News.description.length > 50) ? (News.description | slice:0:50) + '....' : News.description }}</p>
+          <span>{{News.publishedAt | date:' h:mm a  on MMM d'}}</span>
+        </a>
+      </div>
+      <div class="line"></div>
 
     </div>
-    </ng-container>
+  </ng-container>
+  <!--End Content-->
+
 </div>

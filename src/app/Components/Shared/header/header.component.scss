@@ -3,22 +3,31 @@
 
   .navbar-brand {
     color: white !important;
-     font-weight: 600;
-     font-size: 30px;
-     small {
+    font-weight: 600;
+    font-size: 30px;
+
+    small {
       font-size: 11px;
       vertical-align: super;
     }
   }
+
   .nav-item {
-      a {
-        color: white !important;
-        margin: 0px 0px 0px 13px;
-      }
-      .btn-color {
-          border: 1px solid white;
-          background-color: white;
-          color: #B3222F !important;
-      }
+    a {
+      color: white !important;
+      margin: 0px 0px 0px 13px;
+    }
+
+    .btn-color {
+      border: 1px solid white;
+      background-color: white;
+      color: #B3222F !important;
+    }
   }
+
+  .navbar-toggler-icon {
+    background-image: url("../../../../assets/Image/square.png") !important;
+  }
+
+
 }

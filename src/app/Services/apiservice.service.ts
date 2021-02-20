@@ -11,8 +11,8 @@ export class APIServiceService {
 
   constructor(private http: HttpClient) {
    }
-  getAPIS():Observable<News[]> {
-    return this.http.get<News[]>(this.URL)
+  getAPIS():Observable<any> {
+    return this.http.get<any>(this.URL)
     .pipe(
      retry(2),
     catchError(this.handleError)

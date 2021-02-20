@@ -1,9 +1,21 @@
 <div class="MostPopular border p-3 my-3">
-    <h4 class="text-color border-bottom"> Most Popular </h4>
-    <ng-container *ngFor="let News of MostPopular.articles ; let i = index">
-    <div class="d-flex border-bottom pt-2"  *ngIf="i >= Startcounter  && i <= Endcounter">
+    <!--Title-->
+  <h4 class="text-color border-bottom"> Most Popular </h4>
+  <!--Start Content-->
+  <ng-container *ngFor="let News of MostPopular.articles ; let i = index">
+    <a [routerLink]="['../Details' , i ]" (click)="getDataDetails(
+        i ,
+        News.title, 
+        News.description, 
+        News.urlToImage ,
+        News.author ,
+        News.publishedAt
+     )">
+      <div class="d-flex border-bottom pt-2" *ngIf="i >= Startcounter  && i <= Endcounter">
         <span class="index">{{i}}</span>
         <p>{{ (News.description.length > 50) ? (News.description | slice:0:50) + '....' : News.description }}</p>
-    </div>
-    </ng-container>
+      </div>
+    </a>
+  </ng-container>
+    <!--End Content-->
 </div>

@@ -7,14 +7,12 @@ import { APIServiceService } from 'src/app/Services/apiservice.service';
   styleUrls: ['./latest-news.component.scss']
 })
 export class LatestNewsComponent implements OnInit {
- 
+
   constructor(
     private APIServices: APIServiceService,
-  
-
   ) { }
   public lastNews: any = [];
-  public firstNews: number = 0;
+  public theFirstNews: number = 0;
   public Startcounter: number = 1;
   public Endcounter: number = 2;
 
@@ -23,27 +21,27 @@ export class LatestNewsComponent implements OnInit {
     this.getData();
 
   }
-
+  // get all data
   getData() {
     this.APIServices.getAPIS().subscribe(req => this.lastNews = req)
   }
 
- 
-  getDataDetails( id : number ,title:string, Description: string , urlToImage:string  , author:string , publishedAt: Date,
-    ) {
+  // get all Details
+  getDataDetails(id: number, title: string, Description: string, urlToImage: string, author: string, publishedAt: Date,
+  ) {
     let DataOfNews = {
-      id : id,
+      id: id,
       title: title,
       description: Description,
       urlToImage: urlToImage,
       author: author,
-      publishedAt:publishedAt ,
+      publishedAt: publishedAt,
     }
-     try {
-          localStorage.setItem('key', JSON.stringify(DataOfNews));
-        } catch (e) {
-          console.error('Error saving to localStorage', e);
-        }
+    try {
+      localStorage.setItem('key', JSON.stringify(DataOfNews));
+    } catch (e) {
+      console.error('Error saving to localStorage', e);
+    }
 
   }
 

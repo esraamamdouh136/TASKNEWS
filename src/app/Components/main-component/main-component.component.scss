@@ -7,3 +7,12 @@
         letter-spacing: 4px;
     }
 }
+
+@media only screen and (max-width : 992px){
+    .title {
+        h2.text-center {
+            font-size: 1.8em;
+  
+        }
+    }
+}

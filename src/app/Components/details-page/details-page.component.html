@@ -9,6 +9,7 @@
     </div>
   </div>
   <div class="row">
+    <!--Start Number Shared-->
     <div class="col-md-2">
       <div class="card">
         <div class="card-header social">
@@ -27,15 +28,23 @@
         </ul>
       </div>
     </div>
+    <!--End Number Shared-->
+
+
     <div class="col-md-10">
+      <!--Start Content-->
       <div class="content">
         <img src="{{news.urlToImage}}" class="img-fluid">
         <p class="des w-100">{{news.description}}</p>
-        <div class="d-flex my-5">
-          <button class="btn btn-success"><i class="far fa-thumbs-up"></i>I Found this helpful</button>
+        <div class="buttons my-5">
+          <button class="btn btn-success  btn-sm-block"><i class="far fa-thumbs-up"></i>I Found this helpful</button>
           <button class="btn btn-gray"><i class="far fa-thumbs-down"></i>I did not Find this helpful</button>
         </div>
       </div>
+      <!--End Content-->
+
+      <!--Start Comments-->
+
       <div class="comments mb-5">
         <h3 *ngIf="DataComments.length > 0" class="mb-4">Comments</h3>
         <div class="border p-3 mb-3" *ngFor="let comment of DataComments">
@@ -45,15 +54,19 @@
 
             </div>
             <div class="col-md-11">
-                <h5 class="name">{{comment.name}}</h5>
-                <small class="date pr-3">{{Date |  date:' h:mm a , MMM d'}}</small>
-                <small class="reply text-color">Reply</small>
-                <p>{{ (comment.message.length > 200) ? (comment.message | slice:0:200) + '....' : comment.message }}</p>
+              <h5 class="name">{{comment.name}}</h5>
+              <small class="date pr-3">{{Date |  date:' h:mm a , MMM d'}}</small>
+              <small class="reply text-color">Reply</small>
+              <p>{{ (comment.message.length > 200) ? (comment.message | slice:0:200) + '....' : comment.message }}</p>
 
             </div>
           </div>
         </div>
       </div>
+      <!--Start Comments-->
+
+      <!--Start converstion-->
+
       <div class="converstion mb-5">
         <h3 class="mb-4">Join the Converstion</h3>
         <form [formGroup]="Comment" (ngSubmit)="onSubmit()">
@@ -68,18 +81,19 @@
           <div class="form-group">
             <input type="email" class="form-control" placeholder="Email" formControlName="email">
             <div *ngIf="Comment.controls.email.invalid && Comment.controls.email.touched">
-                Email is invalid
-              </div>
+              Email is invalid
+            </div>
           </div>
           <div class="form-group">
             <textarea class="form-control" placeholder="Message" rows="3" formControlName="message"></textarea>
             <div *ngIf="Comment.controls.message.invalid && Comment.controls.message.touched">
-                Email is invalid
-              </div>
+              Email is invalid
+            </div>
           </div>
-          <button type="submit" class="btn btn-color w-25"  [disabled] = "!Comment.valid">Send</button>
+          <button type="submit" class="btn btn-color w-25" [disabled]="!Comment.valid">Send</button>
         </form>
       </div>
+      <!--End-->
     </div>
   </div>
 </div>

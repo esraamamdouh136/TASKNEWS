@@ -16,12 +16,15 @@
 }
 
 .card {
-    border: none !important;
-    border-bottom: 1px solid #e0dede !important;
-    border-radius: 0px !important;
+  border: none !important;
+  border-bottom: 1px solid #e0dede !important;
+  border-radius: 0px !important;
+
   h5.card-title {
     font-size: 15px;
     font-weight: 600;
+    color: #545454;
+
   }
 
   p {
@@ -30,5 +33,7 @@
 
   .des {
     font-size: 13px;
+    color: #545454;
+
   }
 }
